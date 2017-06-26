@@ -1,2 +1,39 @@
 Ejemplo muy sencillo de node comunicando con arduino sin usar JohnnyFive, 
 sin los problemas de conexión, compilación, etc de la librera
+
+https://github.com/jessicatv/nodejs-arduino-example
+
+vamso a la ruta 0 del usuario "fulanito"
+he creado carpeta nodejssamples/arduinoled/ 
+pongo el repositorio y todos los archivos
+voy a consola, cd nodesamplejs, enter luego cd arduinoled
+ya estamos en la ruta
+hay que ejecutar el servidor
+
+Pero claro esto no sin antes morir en el intento de hacer Update a npm y node y de borrar antes de update el cochino cache
+
+npm hay que instaalrlo con sudo permisos y  hay que insalr en al ruta d ela carpeta node_modules como socket.io llendo a ruta y ahciendo
+npm install socke.io
+pero ademas hay que instalar el modulo serialport, que no te lo pierdas ha tenido que instalar como global con permiso raro y toda la pesca porque no me dajaba isntaalrlo en la carpeta arduinoled, creo qu eporu eno tengo bien creadas las rutas o scafolding
+
+el caso es que he copia la carpeta serialport de la ruta global de node_modules en oscartv y la he pegado a pelo en arduinoled y ha colado, esto es una P**** mierda total, para que coño hacemso entonces npm isntall y esas mierdas
+
+
+Luego me pongo en arduinoled y hago node server/server.js para ejecutar el servidor
+y resulat que hay un bug en el archivo que no esta actualziado y ya no se llama a la clase, solo a una funcion
+cmabiar
+SerialPort = require('serialport').SerielPort
+ por 
+SerialPort = require('serialport'),
+
+y luego el puerto USB, claro en vez del que viene en el script, pues hay qu ebsucar el que usa el arduino conectado al MAc, en el IDE de arduino Sketch viene el puerto que uso, el primero hacia la corriente
+
+ /dev/cu.usbmodemfd121'
+
+Ahora si me ha dejado ejecutar y lo veo en el 
++el
+
+ http://localhost:8000/
+
+Un autentico Milagro, no me lo creo
+
